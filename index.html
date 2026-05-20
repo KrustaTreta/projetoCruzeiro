@@ -6,8 +6,15 @@
     <title>Zeladoria Urbana Preditiva - IA & SAP</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Custom scrollbar para um visual mais limpo */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0f172a; }
+        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #475569; }
+    </style>
 </head>
-<body class="bg-slate-900 text-slate-100 font-sans antialiased">
+<body class="bg-slate-900 text-slate-100 font-sans antialiased selection:bg-indigo-500/30">
 
     <nav class="sticky top-0 z-50 bg-slate-900/90 backdrop-blur-md border-b border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
@@ -16,137 +23,21 @@
                 <span class="font-bold text-lg tracking-wider text-slate-200">ZELADORIA<span class="text-indigo-500">.SMART</span></span>
             </div>
             <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-400">
+                <a href="#problema" class="hover:text-white transition-colors">O Desafio</a>
                 <a href="#arquitetura" class="hover:text-white transition-colors">A Infra</a>
-                <a href="#aprendizados-tecnicos" class="hover:text-white transition-colors">Stack & Desafios</a>
-                <a href="#impacto-social" class="hover:text-white transition-colors">Impacto Real</a>
-                <a href="#demonstracao" class="text-indigo-400 hover:text-indigo-300 font-bold">Ver Execução</a>
+                <a href="#metricas" class="hover:text-white transition-colors">Métricas</a>
+                <a href="#aprendizados" class="hover:text-white transition-colors">Aprendizados</a>
+                <a href="#demonstracao" class="text-indigo-400 hover:text-indigo-300 font-bold border border-indigo-500/30 px-3 py-1.5 rounded-md bg-indigo-500/10 transition-colors">Ver Execução</a>
             </div>
         </div>
     </nav>
 
-    <header class="relative overflow-hidden py-20 border-b border-slate-800">
+    <header class="relative overflow-hidden py-24 border-b border-slate-800 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-slate-800 via-slate-900 to-slate-900">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded text-xs font-mono font-medium bg-slate-800 text-indigo-400 border border-slate-700 mb-6">
-                <i class="fa-solid fa-terminal"></i> Projeto de Extensão Universitária | Juiz de Fora
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded text-xs font-mono font-medium bg-slate-800/80 text-indigo-400 border border-slate-700 mb-6 backdrop-blur-sm">
+                <i class="fa-solid fa-terminal"></i> Projeto de Pesquisa e Extensão | Juiz de Fora
             </span>
-            <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight text-white mb-6 leading-tight">
-                Mapeamento de Bem-Estar Urbano:<br>
-                <span class="text-indigo-400">Automação de Zeladoria com IA</span>
+            <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white mb-6 leading-tight">
+                Mapeamento Inteligente de<br>Bem-Estar Urbano
             </h1>
-            <p class="text-lg text-slate-400 mb-8 max-w-3xl">
-                O fim das rondas manuais. Um pipeline que usa Visão Computacional (YOLOv8) para varrer as ruas, calcular a saúde da via e disparar payloads JSON direto pro SAP S/4HANA quando o limite crítico é atingido.
-            </p>
-            <div class="flex gap-4 font-mono text-sm">
-                <span class="bg-slate-800 px-3 py-1 rounded text-slate-300"><i class="fa-brands fa-python text-blue-400"></i> Python</span>
-                <span class="bg-slate-800 px-3 py-1 rounded text-slate-300"><i class="fa-solid fa-brain text-purple-400"></i> YOLOv8</span>
-                <span class="bg-slate-800 px-3 py-1 rounded text-slate-300"><i class="fa-solid fa-cloud text-cyan-400"></i> REST API</span>
-            </div>
-        </div>
-    </header>
-
-    <section id="arquitetura" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-b border-slate-800">
-        <div class="mb-12">
-            <h2 class="text-2xl font-bold text-white mb-2">O Problema e a Orquestração</h2>
-            <p class="text-slate-400">Hoje, a prefeitura depende de denúncias ou vistorias presenciais pra achar um problema. É lento e custoso. A solução foi montar um pipeline 100% cloud para agir de forma preditiva.</p>
-        </div>
-        
-        <div class="grid md:grid-cols-3 gap-6 font-mono text-sm">
-            <div class="bg-slate-800/50 p-6 rounded-lg border border-slate-700">
-                <span class="text-indigo-400 font-bold block mb-4">01. Telemetria (Colab)</span>
-                <p class="text-slate-300">O script Python varre o repositório no Drive buscando capturas da rua. Pega a imagem bruta e prepara para a requisição.</p>
-            </div>
-            <div class="bg-slate-800/50 p-6 rounded-lg border border-slate-700">
-                <span class="text-purple-400 font-bold block mb-4">02. Inferência (YOLOv8)</span>
-                <p class="text-slate-300">Bate na API do Roboflow. O modelo escaneia os pixels procurando classes específicas (`entulho`, `fios_expostos`) e devolve as coordenadas.</p>
-            </div>
-            <div class="bg-slate-800/50 p-6 rounded-lg border border-slate-700">
-                <span class="text-cyan-400 font-bold block mb-4">03. Gatilho ERP (SAP)</span>
-                <p class="text-slate-300">A lógica calcula o Health Score da via. Se bater menos de 70, estrutura um JSON e faz um POST no SAP abrindo o chamado de manutenção (M1).</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="aprendizados-tecnicos" class="py-16 bg-slate-900 border-b border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-2xl font-bold text-white mb-8 border-l-4 border-indigo-500 pl-4">Desafios e Aprendizados Técnicos</h2>
-            
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="bg-slate-800 p-6 rounded-xl border border-slate-700">
-                    <div class="flex items-center gap-3 mb-4">
-                        <i class="fa-solid fa-database text-2xl text-emerald-400"></i>
-                        <h3 class="text-xl font-bold text-white">Driblando o "Small Data" e Overfitting</h3>
-                    </div>
-                    <p class="text-slate-400 leading-relaxed">
-                        O maior gargalo inicial foi a base de dados. Treinar IA com poucas imagens locais originais (24 fotos) gera o risco clássico de <i>overfitting</i> — a rede decora as fotos em vez de aprender o padrão. A saída técnica foi aplicar <b>Data Augmentation</b> no pré-processamento. Inseri filtros de brilho e ruído pra simular a rua em dias nublados e fim de tarde, multiplicando a base para mais de 50 imagens sintéticas e deixando o modelo cascudo.
-                    </p>
-                </div>
-
-                <div class="bg-slate-800 p-6 rounded-xl border border-slate-700">
-                    <div class="flex items-center gap-3 mb-4">
-                        <i class="fa-solid fa-network-wired text-2xl text-blue-400"></i>
-                        <h3 class="text-xl font-bold text-white">Lógica de Negócio vs. Detecção</h3>
-                    </div>
-                    <p class="text-slate-400 leading-relaxed">
-                        Não basta a IA achar o lixo, ela tem que tomar decisão corporativa. Aprendi na prática como amarrar o resultado do modelo com uma regra de negócio. Criei o algoritmo do <b>Health Score</b>: o script pesa a quantidade de lixo (peso 10) e fios (peso 15). O ERP não é inundado com chamados inúteis; o payload só é disparado via POST para a Alemanha se o score da rua for realmente crítico.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="impacto-social" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-b border-slate-800">
-        <h2 class="text-2xl font-bold text-white mb-8 border-l-4 border-purple-500 pl-4">O Impacto Social e Urbano</h2>
-        
-        <div class="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-                <p class="text-slate-300 text-lg leading-relaxed mb-6">
-                    A tecnologia pela tecnologia não serve de nada se não resolver um problema real na ponta. No desenvolvimento desse projeto de extensão, ficou claro como a zeladoria afeta diretamente o cidadão em Juiz de Fora.
-                </p>
-                <ul class="space-y-4">
-                    <li class="flex items-start gap-3">
-                        <i class="fa-solid fa-shield-halved text-purple-400 mt-1"></i>
-                        <div>
-                            <strong class="text-white block">Prevenção de Acidentes</strong>
-                            <span class="text-slate-400">Detectar fiação caída ou exposta não é estética, é segurança pública. O bot reduz o tempo de resposta das concessionárias de dias para minutos, evitando acidentes.</span>
-                        </div>
-                    </li>
-                    <li class="flex items-start gap-3">
-                        <i class="fa-solid fa-seedling text-emerald-400 mt-1"></i>
-                        <div>
-                            <strong class="text-white block">Bem-Estar e a Teoria das Janelas Quebradas</strong>
-                            <span class="text-slate-400">Entulho acumulado destrói a acessibilidade e passa a sensação de abandono, o que atrai mais degradação e pequenos delitos. Ruas limpas e ordenadas afetam a saúde mental coletiva e devolvem a rua pro cidadão.</span>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="bg-slate-800 rounded-xl p-8 border border-slate-700 text-center">
-                <i class="fa-solid fa-city text-6xl text-slate-600 mb-6"></i>
-                <h3 class="text-xl font-bold text-white mb-2">Da Reação para a Prevenção</h3>
-                <p class="text-slate-400">
-                    O maior ganho social deste projeto é provar que a gestão pública não precisa ser puramente reativa. Com IA leve rodando no background, a cidade passa a cuidar da própria infraestrutura antes mesmo que o morador precise ligar pra reclamar.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <section id="demonstracao" class="py-20 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-10">
-            <h2 class="text-3xl font-bold text-white mb-3">Execução do Pipeline na Prática</h2>
-            <p class="text-slate-400">Log do terminal: Inferência na imagem, processamento do Score e requisição validada no SAP.</p>
-        </div>
-        
-        <div class="bg-black p-2 rounded-xl shadow-2xl shadow-indigo-500/20 border border-slate-800">
-            <video controls preload="metadata" class="w-full rounded-lg">
-                <source src="demonstracao.webm" type="video/webm">
-                Seu navegador não suporta a tag de vídeo.
-            </video>
-        </div>
-    </section>
-
-    <footer class="bg-slate-950 py-6 text-center text-slate-500 font-mono text-sm border-t border-slate-800">
-        <p>Dev/Ops: <span class="text-slate-300">Danilo Mezonato de Lima</span></p>
-        <p class="mt-1">Mapeamento Inteligente de Bem-Estar Urbano | 2026</p>
-    </footer>
-
-</body>
-</html>
+            <p
