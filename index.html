@@ -9,129 +9,143 @@
 </head>
 <body class="bg-slate-900 text-slate-100 font-sans antialiased">
 
-    <nav class="sticky top-0 z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-800">
+    <nav class="sticky top-0 z-50 bg-slate-900/90 backdrop-blur-md border-b border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
             <div class="flex items-center gap-2">
-                <i class="fa-solid fa-city text-indigo-500 text-xl"></i>
-                <span class="font-bold text-lg tracking-wider bg-gradient-to-r from-indigo-400 to-cyan-400 bg-clip-text text-transparent">ZELADORIA SMART</span>
+                <i class="fa-solid fa-server text-indigo-500 text-xl"></i>
+                <span class="font-bold text-lg tracking-wider text-slate-200">ZELADORIA<span class="text-indigo-500">.SMART</span></span>
             </div>
             <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-400">
-                <a href="#problema" class="hover:text-slate-200 transition-colors">O Problema</a>
-                <a href="#arquitetura" class="hover:text-slate-200 transition-colors">Arquitetura</a>
-                <a href="#demonstracao" class="hover:text-indigo-400 text-indigo-500 transition-colors bg-indigo-500/10 px-3 py-1.5 rounded-full border border-indigo-500/20">Ver Demonstração</a>
+                <a href="#arquitetura" class="hover:text-white transition-colors">A Infra</a>
+                <a href="#aprendizados-tecnicos" class="hover:text-white transition-colors">Stack & Desafios</a>
+                <a href="#impacto-social" class="hover:text-white transition-colors">Impacto Real</a>
+                <a href="#demonstracao" class="text-indigo-400 hover:text-indigo-300 font-bold">Ver Execução</a>
             </div>
         </div>
     </nav>
 
-    <header class="relative overflow-hidden py-24 lg:py-32 border-b border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 mb-6">
-                <span class="h-2 w-2 rounded-full bg-indigo-400 animate-pulse"></span> Projeto de Extensão Universitária
+    <header class="relative overflow-hidden py-20 border-b border-slate-800">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded text-xs font-mono font-medium bg-slate-800 text-indigo-400 border border-slate-700 mb-6">
+                <i class="fa-solid fa-terminal"></i> Projeto de Extensão Universitária | Juiz de Fora
             </span>
-            <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white mb-6">
-                Mapeamento Inteligente de <br>
-                <span class="bg-gradient-to-r from-indigo-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent">Bem-Estar Urbano</span>
+            <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight text-white mb-6 leading-tight">
+                Mapeamento de Bem-Estar Urbano:<br>
+                <span class="text-indigo-400">Automação de Zeladoria com IA</span>
             </h1>
-            <p class="max-w-2xl mx-auto text-lg text-slate-400 mb-10">
-                Detecção automatizada de estressores visuais em Juiz de Fora utilizando Visão Computacional (YOLO) integrada ao ecossistema global ERP SAP S/4HANA.
+            <p class="text-lg text-slate-400 mb-8 max-w-3xl">
+                O fim das rondas manuais. Um pipeline que usa Visão Computacional (YOLOv8) para varrer as ruas, calcular a saúde da via e disparar payloads JSON direto pro SAP S/4HANA quando o limite crítico é atingido.
             </p>
-            <div class="flex justify-center gap-4">
-                <a href="#demonstracao" class="bg-indigo-600 hover:bg-indigo-500 text-white font-semibold px-6 py-3 rounded-lg shadow-lg shadow-indigo-600/30 transition-all transform hover:-translate-y-0.5">
-                    <i class="fa-solid fa-play mr-2"></i> Assistir Demonstração
-                </a>
-                <a href="#arquitetura" class="bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold px-6 py-3 rounded-lg border border-slate-700 transition-colors">
-                    Como Funciona
-                </a>
+            <div class="flex gap-4 font-mono text-sm">
+                <span class="bg-slate-800 px-3 py-1 rounded text-slate-300"><i class="fa-brands fa-python text-blue-400"></i> Python</span>
+                <span class="bg-slate-800 px-3 py-1 rounded text-slate-300"><i class="fa-solid fa-brain text-purple-400"></i> YOLOv8</span>
+                <span class="bg-slate-800 px-3 py-1 rounded text-slate-300"><i class="fa-solid fa-cloud text-cyan-400"></i> REST API</span>
             </div>
         </div>
     </header>
 
-    <section id="problema" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-            <h2 class="text-3xl font-bold text-white mb-4">O Desafio da Gestão Pública</h2>
-            <p class="text-slate-400 max-w-xl mx-auto">Vistorias urbanas tradicionais são lentas e dependem de denúncias manuais. Focamos em mitigar de forma preditiva dois grandes estressores:</p>
+    <section id="arquitetura" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-b border-slate-800">
+        <div class="mb-12">
+            <h2 class="text-2xl font-bold text-white mb-2">O Problema e a Orquestração</h2>
+            <p class="text-slate-400">Hoje, a prefeitura depende de denúncias ou vistorias presenciais pra achar um problema. É lento e custoso. A solução foi montar um pipeline 100% cloud para agir de forma preditiva.</p>
         </div>
-        <div class="grid md:grid-cols-2 gap-8">
-            <div class="p-8 bg-slate-800/50 rounded-2xl border border-slate-800 hover:border-slate-700 transition-all group">
-                <div class="w-12 h-12 rounded-xl bg-red-500/10 border border-red-500/20 flex items-center justify-center text-red-400 text-xl mb-6 group-hover:scale-110 transition-transform">
-                    <i class="fa-solid fa-dumpster"></i>
-                </div>
-                <h3 class="text-xl font-bold text-white mb-3">Acúmulo de Entulho</h3>
-                <p class="text-slate-400 leading-relaxed">Depósitos irregulares de lixo e resíduos em calçadas prejudicam a mobilidade dos pedestres, atraem vetores de doenças e degradam o valor social do espaço público.</p>
+        
+        <div class="grid md:grid-cols-3 gap-6 font-mono text-sm">
+            <div class="bg-slate-800/50 p-6 rounded-lg border border-slate-700">
+                <span class="text-indigo-400 font-bold block mb-4">01. Telemetria (Colab)</span>
+                <p class="text-slate-300">O script Python varre o repositório no Drive buscando capturas da rua. Pega a imagem bruta e prepara para a requisição.</p>
             </div>
-            <div class="p-8 bg-slate-800/50 rounded-2xl border border-slate-800 hover:border-slate-700 transition-all group">
-                <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 text-xl mb-6 group-hover:scale-110 transition-transform">
-                    <i class="fa-solid fa-bolt"></i>
-                </div>
-                <h3 class="text-xl font-bold text-white mb-3">Fiação Exposta e Caída</h3>
-                <p class="text-slate-400 leading-relaxed">Cabos rompidos ou baixos nos postes geram riscos iminentes de acidentes elétricos, comprometem a infraestrutura de telecomunicações e poluem visualmente a via.</p>
+            <div class="bg-slate-800/50 p-6 rounded-lg border border-slate-700">
+                <span class="text-purple-400 font-bold block mb-4">02. Inferência (YOLOv8)</span>
+                <p class="text-slate-300">Bate na API do Roboflow. O modelo escaneia os pixels procurando classes específicas (`entulho`, `fios_expostos`) e devolve as coordenadas.</p>
+            </div>
+            <div class="bg-slate-800/50 p-6 rounded-lg border border-slate-700">
+                <span class="text-cyan-400 font-bold block mb-4">03. Gatilho ERP (SAP)</span>
+                <p class="text-slate-300">A lógica calcula o Health Score da via. Se bater menos de 70, estrutura um JSON e faz um POST no SAP abrindo o chamado de manutenção (M1).</p>
             </div>
         </div>
     </section>
 
-    <section id="arquitetura" class="py-20 bg-slate-950 border-y border-slate-800">
+    <section id="aprendizados-tecnicos" class="py-16 bg-slate-900 border-b border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-white mb-4">Arquitetura de Microserviços em Nuvem</h2>
-                <p class="text-slate-400 max-w-xl mx-auto">Um fluxo de dados automatizado e assíncrono que transforma imagens capturadas em ordens de manutenção em segundos.</p>
-            </div>
+            <h2 class="text-2xl font-bold text-white mb-8 border-l-4 border-indigo-500 pl-4">Desafios e Aprendizados Técnicos</h2>
             
-            <div class="grid md:grid-cols-3 gap-8 relative">
-                <div class="bg-slate-900 p-6 rounded-xl border border-slate-800 text-center">
-                    <span class="text-xs font-bold text-indigo-400 tracking-widest uppercase bg-indigo-500/10 px-2.5 py-1 rounded">Passo 1</span>
-                    <h3 class="text-lg font-bold text-white mt-4 mb-2">Telemetria Visual</h3>
-                    <p class="text-slate-400 text-sm">O orquestrador em Python varre o repositório no Google Drive e extrai capturas das vias públicas de Juiz de Fora.</p>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-slate-800 p-6 rounded-xl border border-slate-700">
+                    <div class="flex items-center gap-3 mb-4">
+                        <i class="fa-solid fa-database text-2xl text-emerald-400"></i>
+                        <h3 class="text-xl font-bold text-white">Driblando o "Small Data" e Overfitting</h3>
+                    </div>
+                    <p class="text-slate-400 leading-relaxed">
+                        O maior gargalo inicial foi a base de dados. Treinar IA com poucas imagens locais originais (24 fotos) gera o risco clássico de <i>overfitting</i> — a rede decora as fotos em vez de aprender o padrão. A saída técnica foi aplicar <b>Data Augmentation</b> no pré-processamento. Inseri filtros de brilho e ruído pra simular a rua em dias nublados e fim de tarde, multiplicando a base para mais de 50 imagens sintéticas e deixando o modelo cascudo.
+                    </p>
                 </div>
-                <div class="bg-slate-900 p-6 rounded-xl border border-slate-800 text-center">
-                    <span class="text-xs font-bold text-purple-400 tracking-widest uppercase bg-purple-500/10 px-2.5 py-1 rounded">Passo 2</span>
-                    <h3 class="text-lg font-bold text-white mt-4 mb-2">Processamento IA</h3>
-                    <p class="text-slate-400 text-sm">A foto é enviada via API para a nuvem do Roboflow (YOLO). O modelo avalia os pixels, classifica os danos e calcula o <i>Health Score</i>.</p>
+
+                <div class="bg-slate-800 p-6 rounded-xl border border-slate-700">
+                    <div class="flex items-center gap-3 mb-4">
+                        <i class="fa-solid fa-network-wired text-2xl text-blue-400"></i>
+                        <h3 class="text-xl font-bold text-white">Lógica de Negócio vs. Detecção</h3>
+                    </div>
+                    <p class="text-slate-400 leading-relaxed">
+                        Não basta a IA achar o lixo, ela tem que tomar decisão corporativa. Aprendi na prática como amarrar o resultado do modelo com uma regra de negócio. Criei o algoritmo do <b>Health Score</b>: o script pesa a quantidade de lixo (peso 10) e fios (peso 15). O ERP não é inundado com chamados inúteis; o payload só é disparado via POST para a Alemanha se o score da rua for realmente crítico.
+                    </p>
                 </div>
-                <div class="bg-slate-900 p-6 rounded-xl border border-slate-800 text-center">
-                    <span class="text-xs font-bold text-cyan-400 tracking-widest uppercase bg-cyan-500/10 px-2.5 py-1 rounded">Passo 3</span>
-                    <h3 class="text-lg font-bold text-white mt-4 mb-2">Manutenção Preventiva</h3>
-                    <p class="text-slate-400 text-sm">Se o índice crítico for atingido, um payload JSON padronizado é estruturado e transmitido para a API de Notas de Manutenção do SAP S/4HANA.</p>
-                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="impacto-social" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-b border-slate-800">
+        <h2 class="text-2xl font-bold text-white mb-8 border-l-4 border-purple-500 pl-4">O Impacto Social e Urbano</h2>
+        
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <p class="text-slate-300 text-lg leading-relaxed mb-6">
+                    A tecnologia pela tecnologia não serve de nada se não resolver um problema real na ponta. No desenvolvimento desse projeto de extensão, ficou claro como a zeladoria afeta diretamente o cidadão em Juiz de Fora.
+                </p>
+                <ul class="space-y-4">
+                    <li class="flex items-start gap-3">
+                        <i class="fa-solid fa-shield-halved text-purple-400 mt-1"></i>
+                        <div>
+                            <strong class="text-white block">Prevenção de Acidentes</strong>
+                            <span class="text-slate-400">Detectar fiação caída ou exposta não é estética, é segurança pública. O bot reduz o tempo de resposta das concessionárias de dias para minutos, evitando acidentes.</span>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fa-solid fa-seedling text-emerald-400 mt-1"></i>
+                        <div>
+                            <strong class="text-white block">Bem-Estar e a Teoria das Janelas Quebradas</strong>
+                            <span class="text-slate-400">Entulho acumulado destrói a acessibilidade e passa a sensação de abandono, o que atrai mais degradação e pequenos delitos. Ruas limpas e ordenadas afetam a saúde mental coletiva e devolvem a rua pro cidadão.</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="bg-slate-800 rounded-xl p-8 border border-slate-700 text-center">
+                <i class="fa-solid fa-city text-6xl text-slate-600 mb-6"></i>
+                <h3 class="text-xl font-bold text-white mb-2">Da Reação para a Prevenção</h3>
+                <p class="text-slate-400">
+                    O maior ganho social deste projeto é provar que a gestão pública não precisa ser puramente reativa. Com IA leve rodando no background, a cidade passa a cuidar da própria infraestrutura antes mesmo que o morador precise ligar pra reclamar.
+                </p>
             </div>
         </div>
     </section>
 
     <section id="demonstracao" class="py-20 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold text-white mb-4">Demonstração da Execução em Tempo Real</h2>
-            <p class="text-slate-400">Assista ao vídeo abaixo para ver o comportamento do script realizando a inferência, renderizando as caixas e conversando com as APIs na nuvem.</p>
+        <div class="text-center mb-10">
+            <h2 class="text-3xl font-bold text-white mb-3">Execução do Pipeline na Prática</h2>
+            <p class="text-slate-400">Log do terminal: Inferência na imagem, processamento do Score e requisição validada no SAP.</p>
         </div>
         
-        <div class="bg-slate-800 p-3 rounded-2xl border border-slate-700 shadow-2xl shadow-indigo-500/5">
-            <video controls preload="metadata" class="w-full rounded-xl shadow-inner border border-slate-900">
+        <div class="bg-black p-2 rounded-xl shadow-2xl shadow-indigo-500/20 border border-slate-800">
+            <video controls preload="metadata" class="w-full rounded-lg">
                 <source src="demonstracao.webm" type="video/webm">
-                Seu navegador não suporta a tag de vídeo. Por favor, certifique-se de que o arquivo está na mesma pasta que esta página.
+                Seu navegador não suporta a tag de vídeo.
             </video>
-        </div>
-
-        <div class="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
-            <div class="p-4 bg-slate-800/30 rounded-xl border border-slate-800">
-                <div class="text-2xl font-bold text-indigo-400">YOLOv8</div>
-                <div class="text-xs text-slate-500 mt-1">Arquitetura de IA</div>
-            </div>
-            <div class="p-4 bg-slate-800/30 rounded-xl border border-slate-800">
-                <div class="text-2xl font-bold text-purple-400">API REST</div>
-                <div class="text-xs text-slate-500 mt-1">Protocolo SAP JSON</div>
-            </div>
-            <div class="p-4 bg-slate-800/30 rounded-xl border border-slate-800">
-                <div class="text-2xl font-bold text-cyan-400">&lt; 1.5s</div>
-                <div class="text-xs text-slate-500 mt-1">Tempo de Inferência</div>
-            </div>
-            <div class="p-4 bg-slate-800/30 rounded-xl border border-slate-800">
-                <div class="text-2xl font-bold text-emerald-400">100% Cloud</div>
-                <div class="text-xs text-slate-500 mt-1">Sem Hardware Local</div>
-            </div>
         </div>
     </section>
 
-    <footer class="bg-slate-950 border-t border-slate-800 py-8 text-center text-sm text-slate-500">
-        <p>Desenvolvido por <span class="text-slate-300 font-medium">Danilo Mezonato de Lima</span></p>
-        <p class="mt-1">Projeto Interdisciplinar &copy; 2026</p>
+    <footer class="bg-slate-950 py-6 text-center text-slate-500 font-mono text-sm border-t border-slate-800">
+        <p>Dev/Ops: <span class="text-slate-300">Danilo Mezonato de Lima</span></p>
+        <p class="mt-1">Mapeamento Inteligente de Bem-Estar Urbano | 2026</p>
     </footer>
 
 </body>
