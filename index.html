@@ -1,211 +1,137 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mapeamento Inteligente de Bem-Estar Urbano</title>
+    <title>Zeladoria Urbana Preditiva - IA & SAP</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        body { background-color: #0f172a; color: #f8fafc; }
-        .glass { background: rgba(15, 23, 42, 0.80); backdrop-filter: blur(16px); border: 1px solid rgba(148, 163, 184, 0.15); }
-        .gradient-text { background: linear-gradient(90deg, #38bdf8, #818cf8); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .text-soft { color: #cbd5e1; }
-        .link-underline { text-decoration: underline; text-underline-offset: 4px; }
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body class="font-sans antialiased">
+<body class="bg-slate-900 text-slate-100 font-sans antialiased">
 
-    <nav class="p-6 flex flex-col md:flex-row justify-between items-start md:items-center max-w-6xl mx-auto gap-4">
-        <div class="text-xl font-bold tracking-tighter uppercase tracking-widest">
-            <span class="text-blue-400">Mapeamento Inteligente</span> de Bem-Estar Urbano
-        </div>
-        <div class="flex flex-wrap gap-5 text-sm font-medium">
-            <a href="#sobre" class="hover:text-blue-300 transition">Sobre</a>
-            <a href="#metodologia" class="hover:text-blue-300 transition">Metodologia</a>
-            <a href="#ods" class="hover:text-blue-300 transition">ODS</a>
-            <a href="#cronograma" class="hover:text-blue-300 transition">Cronograma</a>
-            <a href="#contato" class="hover:text-blue-300 transition">Contato</a>
+    <nav class="sticky top-0 z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <i class="fa-solid fa-city text-indigo-500 text-xl"></i>
+                <span class="font-bold text-lg tracking-wider bg-gradient-to-r from-indigo-400 to-cyan-400 bg-clip-text text-transparent">ZELADORIA SMART</span>
+            </div>
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-400">
+                <a href="#problema" class="hover:text-slate-200 transition-colors">O Problema</a>
+                <a href="#arquitetura" class="hover:text-slate-200 transition-colors">Arquitetura</a>
+                <a href="#demonstracao" class="hover:text-indigo-400 text-indigo-500 transition-colors bg-indigo-500/10 px-3 py-1.5 rounded-full border border-indigo-500/20">Ver Demonstração</a>
+            </div>
         </div>
     </nav>
 
-    <header class="max-w-6xl mx-auto px-6 py-16 text-center">
-        <p class="text-sm uppercase tracking-[0.4em] text-blue-300 mb-4">Pré-projeto de pesquisa e extensão</p>
-        <h1 class="text-5xl md:text-6xl font-extrabold mb-6 leading-tight">
-            Abordagem integrada via visão computacional e ERP para saúde urbana em Juiz de Fora
-        </h1>
-        <p class="text-soft text-lg md:text-xl max-w-3xl mx-auto mb-10 leading-relaxed">
-            Uma solução para mapear a qualidade visual das ruas, detectar estressores urbanos e automatizar a manutenção preditiva usando IA e integração com SAP S/4HANA.</p>
-
-        <div class="max-w-4xl mx-auto grid sm:grid-cols-3 gap-4 text-left">
-            <div class="glass rounded-3xl p-6 border border-slate-700">
-                <h2 class="text-sm uppercase tracking-[0.25em] text-slate-400 mb-3">Aluno</h2>
-                <p class="text-white font-semibold">Danilo Mezonato de Lima</p>
-                <p class="text-soft text-sm mt-1">Curso: Inteligência Artificial</p>
-            </div>
-            <div class="glass rounded-3xl p-6 border border-slate-700">
-                <h2 class="text-sm uppercase tracking-[0.25em] text-slate-400 mb-3">Local</h2>
-                <p class="text-white font-semibold">Juiz de Fora - MG</p>
-                <p class="text-soft text-sm mt-1">Ano: 2026</p>
-            </div>
-            <div class="glass rounded-3xl p-6 border border-slate-700">
-                <h2 class="text-sm uppercase tracking-[0.25em] text-slate-400 mb-3">Objetivo</h2>
-                <p class="text-white font-semibold">Zeladoria urbana preditiva</p>
-                <p class="text-soft text-sm mt-1">Integração IA + ERP</p>
+    <header class="relative overflow-hidden py-24 lg:py-32 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 mb-6">
+                <span class="h-2 w-2 rounded-full bg-indigo-400 animate-pulse"></span> Projeto de Extensão Universitária
+            </span>
+            <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white mb-6">
+                Mapeamento Inteligente de <br>
+                <span class="bg-gradient-to-r from-indigo-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent">Bem-Estar Urbano</span>
+            </h1>
+            <p class="max-w-2xl mx-auto text-lg text-slate-400 mb-10">
+                Detecção automatizada de estressores visuais em Juiz de Fora utilizando Visão Computacional (YOLO) integrada ao ecossistema global ERP SAP S/4HANA.
+            </p>
+            <div class="flex justify-center gap-4">
+                <a href="#demonstracao" class="bg-indigo-600 hover:bg-indigo-500 text-white font-semibold px-6 py-3 rounded-lg shadow-lg shadow-indigo-600/30 transition-all transform hover:-translate-y-0.5">
+                    <i class="fa-solid fa-play mr-2"></i> Assistir Demonstração
+                </a>
+                <a href="#arquitetura" class="bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold px-6 py-3 rounded-lg border border-slate-700 transition-colors">
+                    Como Funciona
+                </a>
             </div>
         </div>
     </header>
 
-    <main class="max-w-6xl mx-auto px-6 pb-20 space-y-20">
-        <section id="sobre" class="grid lg:grid-cols-2 gap-12 items-start">
-            <div>
-                <h2 class="text-4xl font-bold mb-6">Introdução e contexto</h2>
-                <p class="text-soft leading-relaxed mb-5">O crescimento acelerado de Juiz de Fora impõe desafios à gestão pública e à qualidade de vida. A topografia acidentada, o adensamento urbano e a poluição visual ampliam a desigualdade ambiental e elevam a ansiedade da população.</p>
-                <p class="text-soft leading-relaxed">A manutenção urbana permanece reativa e desconectada. Enquanto sistemas ERP como SAP S/4HANA possuem robustez processual, falta integração com a percepção visual da cidade. Este projeto busca unir essas duas pontas.</p>
+    <section id="problema" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold text-white mb-4">O Desafio da Gestão Pública</h2>
+            <p class="text-slate-400 max-w-xl mx-auto">Vistorias urbanas tradicionais são lentas e dependem de denúncias manuais. Focamos em mitigar de forma preditiva dois grandes estressores:</p>
+        </div>
+        <div class="grid md:grid-cols-2 gap-8">
+            <div class="p-8 bg-slate-800/50 rounded-2xl border border-slate-800 hover:border-slate-700 transition-all group">
+                <div class="w-12 h-12 rounded-xl bg-red-500/10 border border-red-500/20 flex items-center justify-center text-red-400 text-xl mb-6 group-hover:scale-110 transition-transform">
+                    <i class="fa-solid fa-dumpster"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-3">Acúmulo de Entulho</h3>
+                <p class="text-slate-400 leading-relaxed">Depósitos irregulares de lixo e resíduos em calçadas prejudicam a mobilidade dos pedestres, atraem vetores de doenças e degradam o valor social do espaço público.</p>
             </div>
-            <div class="glass rounded-3xl p-8 border border-slate-700">
-                <h3 class="text-2xl font-semibold mb-5">Pergunta de pesquisa</h3>
-                <p class="text-soft leading-relaxed">Como desenvolver uma arquitetura de baixo custo que automatize o ciclo de detecção e resposta a estressores ambientais urbanos, integrando Visão Computacional a um ERP para promover saúde mental e eficiência na zeladoria?</p>
+            <div class="p-8 bg-slate-800/50 rounded-2xl border border-slate-800 hover:border-slate-700 transition-all group">
+                <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 text-xl mb-6 group-hover:scale-110 transition-transform">
+                    <i class="fa-solid fa-bolt"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-3">Fiação Exposta e Caída</h3>
+                <p class="text-slate-400 leading-relaxed">Cabos rompidos ou baixos nos postes geram riscos iminentes de acidentes elétricos, comprometem a infraestrutura de telecomunicações e poluem visualmente a via.</p>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="objetivos" class="space-y-10">
-            <h2 class="text-4xl font-bold mb-6">Objetivos</h2>
-            <div class="grid lg:grid-cols-3 gap-6">
-                <div class="glass rounded-3xl p-8 border border-slate-700">
-                    <h3 class="text-2xl font-semibold mb-4">Geral</h3>
-                    <p class="text-soft text-sm leading-relaxed">Validar uma Prova de Conceito de um sistema Cyber-Físico Social que usa IA para mapear a qualidade visual urbana e integra dados ao SAP S/4HANA para manutenção preditiva.</p>
+    <section id="arquitetura" class="py-20 bg-slate-950 border-y border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-white mb-4">Arquitetura de Microserviços em Nuvem</h2>
+                <p class="text-slate-400 max-w-xl mx-auto">Um fluxo de dados automatizado e assíncrono que transforma imagens capturadas em ordens de manutenção em segundos.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 relative">
+                <div class="bg-slate-900 p-6 rounded-xl border border-slate-800 text-center">
+                    <span class="text-xs font-bold text-indigo-400 tracking-widest uppercase bg-indigo-500/10 px-2.5 py-1 rounded">Passo 1</span>
+                    <h3 class="text-lg font-bold text-white mt-4 mb-2">Telemetria Visual</h3>
+                    <p class="text-slate-400 text-sm">O orquestrador em Python varre o repositório no Google Drive e extrai capturas das vias públicas de Juiz de Fora.</p>
                 </div>
-                <div class="glass rounded-3xl p-8 border border-slate-700">
-                    <h3 class="text-2xl font-semibold mb-4">Específicos</h3>
-                    <ul class="space-y-3 text-soft text-sm leading-relaxed">
-                        <li>Coletar e curar dataset urbano de Juiz de Fora.</li>
-                        <li>Desenvolver pipeline híbrido de IA.</li>
-                        <li>Modelar arquitetura no SAP S/4HANA.</li>
-                        <li>Implementar middleware que gere ordens de serviço.</li>
-                        <li>Disponibilizar mapas de caminhabilidade terapêutica.</li>
-                    </ul>
+                <div class="bg-slate-900 p-6 rounded-xl border border-slate-800 text-center">
+                    <span class="text-xs font-bold text-purple-400 tracking-widest uppercase bg-purple-500/10 px-2.5 py-1 rounded">Passo 2</span>
+                    <h3 class="text-lg font-bold text-white mt-4 mb-2">Processamento IA</h3>
+                    <p class="text-slate-400 text-sm">A foto é enviada via API para a nuvem do Roboflow (YOLO). O modelo avalia os pixels, classifica os danos e calcula o <i>Health Score</i>.</p>
                 </div>
-                <div class="glass rounded-3xl p-8 border border-slate-700">
-                    <h3 class="text-2xl font-semibold mb-4">Impacto</h3>
-                    <p class="text-soft text-sm leading-relaxed">Alinhar a cidade como ativo corporativo e trazer manutenção urbana orientada a dados, promovendo saúde mental e inclusão urbana.</p>
+                <div class="bg-slate-900 p-6 rounded-xl border border-slate-800 text-center">
+                    <span class="text-xs font-bold text-cyan-400 tracking-widest uppercase bg-cyan-500/10 px-2.5 py-1 rounded">Passo 3</span>
+                    <h3 class="text-lg font-bold text-white mt-4 mb-2">Manutenção Preventiva</h3>
+                    <p class="text-slate-400 text-sm">Se o índice crítico for atingido, um payload JSON padronizado é estruturado e transmitido para a API de Notas de Manutenção do SAP S/4HANA.</p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="metodologia" class="grid lg:grid-cols-2 gap-12 items-start">
-            <div class="glass rounded-3xl p-8 border border-slate-700">
-                <h2 class="text-4xl font-bold mb-6">Metodologia técnica</h2>
-                <p class="text-soft leading-relaxed mb-6">O projeto será desenvolvido em três camadas: Percepção, Lógica e Gestão.</p>
-                <div class="space-y-6">
-                    <div>
-                        <h3 class="text-2xl font-semibold mb-3">Percepção</h3>
-                        <p class="text-soft text-sm leading-relaxed">Python com DeepLabV3+ para calcular o Índice de Visão Verde e YOLOv8 para identificar lixo, pichações e fios expostos.</p>
-                    </div>
-                    <div>
-                        <h3 class="text-2xl font-semibold mb-3">Lógica</h3>
-                        <p class="text-soft text-sm leading-relaxed">Health Score: Score = (Peso_Verde × %Vegetação) - (Peso_Caos × ∑Estressores). Vias classificadas em Restauradora, Neutra ou Estressora.</p>
-                    </div>
-                    <div>
-                        <h3 class="text-2xl font-semibold mb-3">Gestão</h3>
-                        <p class="text-soft text-sm leading-relaxed">Mapeamento de ruas como Functional Locations no SAP e automação de Notificações de Manutenção no módulo PM para alertas críticos.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="glass rounded-3xl p-8 border border-slate-700">
-                <h2 class="text-3xl font-semibold mb-5">Fluxo operacional</h2>
-                <ol class="space-y-4 text-soft text-sm leading-relaxed list-decimal list-inside">
-                    <li>Coleta e anotação de imagens urbanas.</li>
-                    <li>Treinamento e inferência dos modelos de IA.</li>
-                    <li>Cálculo do Health Score.</li>
-                    <li>Disparo de alertas para ERP.</li>
-                    <li>Visualização em mapas e dashboards.</li>
-                </ol>
-            </div>
-        </section>
+    <section id="demonstracao" class="py-20 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-white mb-4">Demonstração da Execução em Tempo Real</h2>
+            <p class="text-slate-400">Assista ao vídeo abaixo para ver o comportamento do script realizando a inferência, renderizando as caixas e conversando com as APIs na nuvem.</p>
+        </div>
+        
+        <div class="bg-slate-800 p-3 rounded-2xl border border-slate-700 shadow-2xl shadow-indigo-500/5">
+            <video controls preload="metadata" class="w-full rounded-xl shadow-inner border border-slate-900">
+                <source src="nome_do_seu_video.mp4" type="video/mp4">
+                Seu navegador não suporta a tag de vídeo. Por favor, certifique-se de que o arquivo está na mesma pasta que esta página.
+            </video>
+        </div>
 
-        <section id="ods" class="space-y-10">
-            <h2 class="text-4xl font-bold mb-6">Justificativa e ODS</h2>
-            <div class="grid lg:grid-cols-2 gap-8">
-                <div class="glass rounded-3xl p-8 border border-slate-700">
-                    <h3 class="text-2xl font-semibold mb-4">Por que este projeto é inovador?</h3>
-                    <p class="text-soft leading-relaxed mb-4">Ao tratar a cidade como ativo, o projeto transforma a zeladoria urbana em serviço estratégico e orientado por dados de saúde visual.</p>
-                    <p class="text-soft text-sm leading-relaxed">A inovação está na integração entre percepção visual e ação de gestão, conectando a inteligência da rua ao poder de decisão do ERP.</p>
-                </div>
-                <div class="space-y-6">
-                    <div class="glass rounded-3xl p-8 border border-slate-700">
-                        <h3 class="text-2xl font-semibold mb-4">ODS 3</h3>
-                        <p class="text-soft text-sm leading-relaxed">Reduzir estressores ambientais visuais que impactam a saúde mental e o bem-estar da população.</p>
-                    </div>
-                    <div class="glass rounded-3xl p-8 border border-slate-700">
-                        <h3 class="text-2xl font-semibold mb-4">ODS 11</h3>
-                        <p class="text-soft text-sm leading-relaxed">Promover cidades mais sustentáveis, inclusivas e eficientes por meio da manutenção preditiva urbana.</p>
-                    </div>
-                </div>
+        <div class="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
+            <div class="p-4 bg-slate-800/30 rounded-xl border border-slate-800">
+                <div class="text-2xl font-bold text-indigo-400">YOLOv8</div>
+                <div class="text-xs text-slate-500 mt-1">Arquitetura de IA</div>
             </div>
-        </section>
+            <div class="p-4 bg-slate-800/30 rounded-xl border border-slate-800">
+                <div class="text-2xl font-bold text-purple-400">API REST</div>
+                <div class="text-xs text-slate-500 mt-1">Protocolo SAP JSON</div>
+            </div>
+            <div class="p-4 bg-slate-800/30 rounded-xl border border-slate-800">
+                <div class="text-2xl font-bold text-cyan-400">&lt; 1.5s</div>
+                <div class="text-xs text-slate-500 mt-1">Tempo de Inferência</div>
+            </div>
+            <div class="p-4 bg-slate-800/30 rounded-xl border border-slate-800">
+                <div class="text-2xl font-bold text-emerald-400">100% Cloud</div>
+                <div class="text-xs text-slate-500 mt-1">Sem Hardware Local</div>
+            </div>
+        </div>
+    </section>
 
-        <section id="resultados" class="space-y-10">
-            <h2 class="text-4xl font-bold mb-6">Resultados esperados</h2>
-            <div class="grid lg:grid-cols-3 gap-6">
-                <div class="glass rounded-3xl p-8 border border-slate-700">
-                    <h3 class="text-2xl font-semibold mb-4">Mapa Web</h3>
-                    <p class="text-soft text-sm leading-relaxed">"Rotas de Calma JF" para a população consultar caminhos com menor carga de estresse visual.</p>
-                </div>
-                <div class="glass rounded-3xl p-8 border border-slate-700">
-                    <h3 class="text-2xl font-semibold mb-4">Dashboard</h3>
-                    <p class="text-soft text-sm leading-relaxed">Relatório técnico para orientar a prefeitura na otimização de limpeza, poda e manutenção urbana.</p>
-                </div>
-                <div class="glass rounded-3xl p-8 border border-slate-700">
-                    <h3 class="text-2xl font-semibold mb-4">Produção acadêmica</h3>
-                    <p class="text-soft text-sm leading-relaxed">Artigo científico sobre integração IoT-ERP aplicada a Smart Cities.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="cronograma" class="space-y-10">
-            <h2 class="text-4xl font-bold mb-6">Cronograma</h2>
-            <div class="grid md:grid-cols-3 gap-6">
-                <div class="glass rounded-3xl p-8 border border-slate-700">
-                    <h3 class="text-2xl font-semibold mb-3">Mês 1</h3>
-                    <p class="text-soft text-sm leading-relaxed">Revisão bibliográfica, configuração do ambiente e coleta do dataset de imagens de JF.</p>
-                </div>
-                <div class="glass rounded-3xl p-8 border border-slate-700">
-                    <h3 class="text-2xl font-semibold mb-3">Mês 2</h3>
-                    <p class="text-soft text-sm leading-relaxed">Treinamento e inferência dos modelos IA e configuração do SAP S/4HANA.</p>
-                </div>
-                <div class="glass rounded-3xl p-8 border border-slate-700">
-                    <h3 class="text-2xl font-semibold mb-3">Mês 3</h3>
-                    <p class="text-soft text-sm leading-relaxed">Integração dos sistemas, geração de mapas visuais e redação do relatório final.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="recursos" class="grid lg:grid-cols-2 gap-8">
-            <div class="glass rounded-3xl p-8 border border-slate-700">
-                <h3 class="text-2xl font-semibold mb-4">Recursos necessários</h3>
-                <ul class="space-y-4 text-soft text-sm leading-relaxed">
-                    <li>Computador com GPU ou ambiente em nuvem (Google Colab).</li>
-                    <li>Acesso a ambiente trial SAP S/4HANA.</li>
-                    <li>Bibliotecas Open Source: PyTorch, OpenCV e Folium.</li>
-                </ul>
-            </div>
-            <div class="glass rounded-3xl p-8 border border-slate-700">
-                <h3 class="text-2xl font-semibold mb-4">Tecnologia</h3>
-                <ul class="space-y-4 text-soft text-sm leading-relaxed">
-                    <li>DeepLabV3+ para GVI.</li>
-                    <li>YOLOv8 para estressores visuais.</li>
-                    <li>Python para processamento e integração ERP.</li>
-                    <li>Mock APIs para simular SAP PM.</li>
-                </ul>
-            </div>
-        </section>
-    </main>
-
-    <footer id="contato" class="max-w-6xl mx-auto px-6 py-12 text-center text-soft border-t border-slate-800">
-        <p class="text-xl font-semibold mb-3">Danilo Mezonato de Lima</p>
-        <p class="mb-4">Projeto de Extensão: Inteligência Artificial aplicada à zeladoria urbana preditiva.</p>
-        <p class="text-sm">Juiz de Fora - MG • 2026</p>
+    <footer class="bg-slate-950 border-t border-slate-800 py-8 text-center text-sm text-slate-500">
+        <p>Desenvolvido por <span class="text-slate-300 font-medium">Danilo Mezonato de Lima</span></p>
+        <p class="mt-1">Projeto Interdisciplinar &copy; 2026</p>
     </footer>
 
 </body>
