@@ -40,4 +40,180 @@
             <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white mb-6 leading-tight">
                 Mapeamento Inteligente de<br>Bem-Estar Urbano
             </h1>
-            <p
+            <p class="text-lg text-slate-400 mb-8 max-w-3xl leading-relaxed">
+                O fim das rondas manuais. Um pipeline preditivo que utiliza Visão Computacional (YOLOv8) para varrer vias públicas, calcular a saúde da infraestrutura e disparar <i>payloads</i> JSON direto para o ERP SAP S/4HANA.
+            </p>
+            <div class="flex gap-4 font-mono text-sm">
+                <span class="bg-slate-800 px-3 py-1.5 rounded text-slate-300 border border-slate-700 shadow-sm"><i class="fa-brands fa-python text-blue-400 mr-1"></i> Python</span>
+                <span class="bg-slate-800 px-3 py-1.5 rounded text-slate-300 border border-slate-700 shadow-sm"><i class="fa-solid fa-brain text-purple-400 mr-1"></i> YOLOv8</span>
+                <span class="bg-slate-800 px-3 py-1.5 rounded text-slate-300 border border-slate-700 shadow-sm"><i class="fa-solid fa-cloud text-cyan-400 mr-1"></i> REST API</span>
+            </div>
+        </div>
+    </header>
+
+    <section id="problema" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="mb-12 border-l-4 border-red-500 pl-4">
+            <h2 class="text-3xl font-bold text-white mb-2">A Dor da Gestão Pública</h2>
+            <p class="text-slate-400 max-w-3xl">Vistorias urbanas tradicionais são lentas e dependem de denúncias manuais. Este projeto foca em mitigar de forma preditiva dois estressores críticos, avaliando o impacto em cascata na cidade:</p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 gap-8">
+            <div class="bg-slate-800/40 p-8 rounded-xl border border-slate-700 hover:border-slate-600 transition-colors">
+                <div class="w-14 h-14 rounded-lg bg-red-500/10 border border-red-500/20 flex items-center justify-center text-red-400 text-2xl mb-6">
+                    <i class="fa-solid fa-dumpster"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-4">Acúmulo de Entulho</h3>
+                <p class="text-slate-400 leading-relaxed">
+                    Não é apenas uma questão estética. Em cidades com relevo acidentado como Juiz de Fora, o entulho bloqueia calçadas forçando pedestres para a via dos carros. Além disso, atrai vetores de doenças e entope bueiros, transformando uma falha de zeladoria em um problema crônico de saúde pública e enchentes.
+                </p>
+            </div>
+            
+            <div class="bg-slate-800/40 p-8 rounded-xl border border-slate-700 hover:border-slate-600 transition-colors">
+                <div class="w-14 h-14 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 text-2xl mb-6">
+                    <i class="fa-solid fa-bolt"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-4">Fiação Exposta e Caída</h3>
+                <p class="text-slate-400 leading-relaxed">
+                    O gargalo atual não é só a rede de alta tensão, mas o compartilhamento desordenado de postes com empresas de telecomunicações. Fios soltos criam "armadilhas" literais para motociclistas. A prefeitura não tem braço humano para fiscalizar poste a poste; a automação via IA resolve isso dando escala e velocidade à fiscalização.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="arquitetura" class="py-20 bg-slate-950 border-y border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-white mb-4">Arquitetura de Microserviços em Nuvem</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto">Um pipeline de engenharia de dados que transforma frames de vídeo ou imagens capturadas em ordens de manutenção oficiais no ERP em milissegundos.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-slate-900 p-8 rounded-xl border border-slate-800 relative overflow-hidden group">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-indigo-500"></div>
+                    <span class="text-indigo-400 font-mono text-sm font-bold tracking-widest uppercase block mb-4">Passo 01</span>
+                    <h3 class="text-xl font-bold text-white mb-3">Telemetria Visual</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        O script Python atua como um "sensor virtual". Simulando o <i>feed</i> de uma câmera embarcada em uma frota pública (como um caminhão de lixo), ele extrai o frame bruto da via, limpa os dados e prepara o cabeçalho (Headers) da requisição HTTP para a nuvem.
+                    </p>
+                </div>
+                <div class="bg-slate-900 p-8 rounded-xl border border-slate-800 relative overflow-hidden group">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-purple-500"></div>
+                    <span class="text-purple-400 font-mono text-sm font-bold tracking-widest uppercase block mb-4">Passo 02</span>
+                    <h3 class="text-xl font-bold text-white mb-3">Processamento IA</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Ao bater na nuvem do Roboflow, o modelo executa processamento matricial puro. Ele não diz apenas "tem lixo"; ele devolve um Array JSON contendo as coordenadas espaciais exatas (Bounding Boxes: X, Y, Width) e a <i>Confidence Score</i> do estressor.
+                    </p>
+                </div>
+                <div class="bg-slate-900 p-8 rounded-xl border border-slate-800 relative overflow-hidden group">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-cyan-500"></div>
+                    <span class="text-cyan-400 font-mono text-sm font-bold tracking-widest uppercase block mb-4">Passo 03</span>
+                    <h3 class="text-xl font-bold text-white mb-3">Gatilho ERP (SAP)</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Aqui entra a lógica de negócio. O código processa os dados do YOLO no algoritmo do <b>Health Score</b>. O payload via POST só é montado e disparado se a via for classificada como crítica, abrindo uma Nota M1 direta no Sandbox do SAP S/4HANA na Alemanha.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="metricas" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-2xl font-bold text-white mb-8 border-l-4 border-emerald-500 pl-4">Indicadores e Stack Tecnológico</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="bg-slate-800/30 p-6 rounded-xl border border-slate-700">
+                <div class="text-3xl font-black text-indigo-400 mb-2">YOLOv8</div>
+                <div class="font-bold text-white mb-2">Single-Shot Detection</div>
+                <p class="text-sm text-slate-400">Analisa a matriz da imagem inteira de uma vez. Garante que mesmo com uma câmera em movimento, o processamento não engasgue.</p>
+            </div>
+            <div class="bg-slate-800/30 p-6 rounded-xl border border-slate-700">
+                <div class="text-3xl font-black text-purple-400 mb-2">API REST</div>
+                <div class="font-bold text-white mb-2">Desacoplamento</div>
+                <p class="text-sm text-slate-400">O protocolo JSON garante que o sistema seja independente. Se a prefeitura trocar de ERP amanhã, a IA continua rodando; basta mudar a URL de destino.</p>
+            </div>
+            <div class="bg-slate-800/30 p-6 rounded-xl border border-slate-700">
+                <div class="text-3xl font-black text-cyan-400 mb-2">&lt; 1.5s</div>
+                <div class="font-bold text-white mb-2">Tempo de Inferência</div>
+                <p class="text-sm text-slate-400">Resposta em milissegundos, provando que a arquitetura suporta <i>Real-Time Video Analytics</i> para frotas rodando pela cidade.</p>
+            </div>
+            <div class="bg-slate-800/30 p-6 rounded-xl border border-slate-700">
+                <div class="text-3xl font-black text-emerald-400 mb-2">100% Cloud</div>
+                <div class="font-bold text-white mb-2">Serverless</div>
+                <p class="text-sm text-slate-400">Elimina a necessidade de comprar hardware pesado e placas de vídeo (GPUs) locais. A infraestrutura escala sob demanda.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="aprendizados" class="py-20 bg-slate-900 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16">
+                
+                <div>
+                    <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-3">
+                        <i class="fa-solid fa-code-branch text-indigo-500"></i> Desafios Técnicos
+                    </h2>
+                    <div class="space-y-6">
+                        <div class="bg-slate-800 p-6 rounded-lg border border-slate-700">
+                            <h4 class="text-lg font-bold text-white mb-2">Overfitting e Data Augmentation</h4>
+                            <p class="text-slate-400 text-sm leading-relaxed">
+                                Treinar IA com poucas imagens originais gera <i>overfitting</i> (a rede decora as fotos em vez de aprender o padrão). A saída técnica que apliquei foi o pré-processamento via <b>Data Augmentation</b>: inseri filtros de exposição e brilho para simular a rua em dias nublados e fim de tarde, multiplicando a base e deixando o modelo resiliente.
+                            </p>
+                        </div>
+                        <div class="bg-slate-800 p-6 rounded-lg border border-slate-700">
+                            <h4 class="text-lg font-bold text-white mb-2">Lógica de Negócio vs. Detecção</h4>
+                            <p class="text-slate-400 text-sm leading-relaxed">
+                                A IA achar lixo é apenas metade do caminho; a outra é a decisão corporativa. A implementação do algoritmo de <b>Health Score</b> garante que o ERP não seja inundado com chamados irrelevantes. O script pesa os danos encontrados e cria uma trava de software antes do disparo para o SAP.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-3">
+                        <i class="fa-solid fa-people-arrows text-purple-500"></i> Impacto Social Real
+                    </h2>
+                    <div class="prose prose-invert prose-slate">
+                        <p class="text-slate-300 leading-relaxed mb-6">
+                            A tecnologia pela tecnologia é vazia se não resolver um gargalo na ponta. O desenvolvimento deste projeto deixou claro que a zeladoria urbana dita a qualidade de vida do cidadão.
+                        </p>
+                        <ul class="space-y-4">
+                            <li class="bg-slate-800/50 p-4 rounded-lg border-l-2 border-purple-500">
+                                <strong class="block text-white mb-1">Teoria das Janelas Quebradas</strong>
+                                <span class="text-sm text-slate-400">Entulho acumulado destrói a acessibilidade e passa uma sensação de abandono institucional, o que atrai mais degradação e pequenos delitos. Ruas limpas afetam positivamente a saúde mental coletiva.</span>
+                            </li>
+                            <li class="bg-slate-800/50 p-4 rounded-lg border-l-2 border-emerald-500">
+                                <strong class="block text-white mb-1">Da Reação para a Prevenção</strong>
+                                <span class="text-sm text-slate-400">O maior ganho é provar que a gestão pública pode ser proativa. Com essa automação rodando no background, a cidade identifica os riscos elétricos e de infraestrutura antes que o morador precise ligar para reclamar ou que acidentes ocorram.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="demonstracao" class="py-24 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-10">
+            <span class="bg-indigo-500/20 text-indigo-400 px-4 py-1.5 rounded-full text-sm font-bold tracking-wide border border-indigo-500/30 mb-4 inline-block">PROVA DE CONCEITO</span>
+            <h2 class="text-3xl font-bold text-white mb-3">Execução do Pipeline na Prática</h2>
+            <p class="text-slate-400">Acompanhe no log do terminal o script extraindo a foto, realizando a inferência na nuvem, calculando o score e recebendo o Status 201 (Created) do SAP S/4HANA.</p>
+        </div>
+        
+        <div class="bg-[#0f172a] p-3 rounded-2xl shadow-2xl shadow-indigo-500/10 border border-slate-700/50 relative">
+            <div class="absolute -top-3 -left-3 w-20 h-20 bg-indigo-500/20 rounded-full blur-2xl"></div>
+            <div class="absolute -bottom-3 -right-3 w-20 h-20 bg-cyan-500/20 rounded-full blur-2xl"></div>
+            
+            <video controls preload="metadata" class="w-full rounded-xl border border-slate-800 shadow-inner relative z-10 bg-black">
+                <source src="demonstracao.webm" type="video/webm">
+                Seu navegador não suporta a tag de vídeo. Por favor, utilize o Google Chrome ou Edge.
+            </video>
+        </div>
+    </section>
+
+    <footer class="bg-slate-950 py-8 text-center text-slate-500 font-mono text-sm border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4">
+            <p class="mb-2">Desenvolvido e orquestrado por <span class="text-slate-300 font-bold">Danilo Mezonato de Lima</span></p>
+            <p class="text-xs">Pesquisa e Extensão Universitária em Inteligência Artificial • 2026</p>
+        </div>
+    </footer>
+
+</body>
+</html>
